@@ -5,10 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Document</title>
+    <style>
+      .contact_us{
+        font-style: italic;
+        padding-left: 28%;
+        font-weight: bolder;
+        font-size: large;
+      }
+      .submitbutton{
+        padding-left: 27%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+      }
+      button{
+        
+        text-decoration: springgreen;
+        color: rgb(75, 15, 240);
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:700;
+      }
+      .heading{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-color: black;
+        color: gold;
+        border-radius: 8%;
+        text-decoration:transparent;
+    }
+    .heading:hover{
+      background-color: gold;
+      color: black;
+      cursor: pointer;
+    }
+    </style>
+    <title>StayFit</title>
 </head>
 <body bgcolor="E0FFFF">
-
+{% load static %}
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
@@ -18,14 +50,12 @@
             <span class="ml-3 text-4xl">Stay Fit</span>
           </a>
           <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-            <a class="mr-4 text-2xl hover:text-blue-700" href="#home">Home</a>
-            <a class="mr-4 text-2xl hover:text-blue-700" href="#daily_pulse">Daily Pulse</a>
-            <a class="mr-4 text-2xl hover:text-blue-700" href="#vaccinations">Vaccination</a>
-            <a class="mr-4 text-2xl hover:text-blue-700" href="corona.html">Corona Exclusive</a>
-            <a class="mr-4 text-2xl hover:text-blue-700" href="#aboutus">About us</a>
+            <a class="mr-4 text-2xl hover:text-blue-700" href="#home"><h2 class="heading">HOME</h2></a>
+            <a class="mr-4 text-2xl hover:text-blue-700" href="#daily_pulse"><h2 class="heading">Daily Pulse</h2></a>
+            <a class="mr-4 text-2xl hover:text-blue-700" href="#vaccinations"><h2 class="heading">Vaccinations</h2></a>
+            <a class="mr-4 text-2xl hover:text-blue-700" href="corona"><h2 class="heading">Corona Exclusive</h2></a>
+            <a class="mr-4 text-2xl hover:text-blue-700" href="#aboutus"><h2 class="heading">About Us</h2></a>
           </nav>
-         
-          </button>
         </div>
       </header>
 
@@ -54,7 +84,7 @@
             </div>
           </div>
           <div class="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
-            <img class="object-cover object-center w-full h-full" src="home_1st.jpeg"> alt="stats">
+            <img class="object-cover object-center w-full h-full" src = '{% static "home_1st.jpeg" %}'> alt="stats">
           </div>
         </div>
       </section>
@@ -146,7 +176,7 @@
                 </div>
               </div>
             </div>
-            <img class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-8" src="home_2nd.jpeg" alt="step">
+            <img class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-8" src="{% static "home_2nd.jpeg" %}" alt="step">
           </div>
         </div>
       </section>
@@ -163,7 +193,7 @@
     <section class="text-gray-600 body-font" id="daily_pulse">
       <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-          <img class="object-cover object-center rounded" alt="hero" src="home_3rd.jpeg" alt="step">
+          <img class="object-cover object-center rounded" alt="hero" src="{% static "home_3rd.jpeg" %}" alt="step">
         </div>
         <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
           <h1 class="title-font sm:text-6xl text-8xl mb-2 font-medium text-gray-900">Nutrients needed by our body</h1>
@@ -1345,12 +1375,12 @@ brown rice.
         <div class="flex flex-wrap -m-4">
           <div class="p-4 lg:w-1/2">
             <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="./team/Himanshu.jpeg">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="{% static "/team/Himanshu.jpeg" %}">
               <div class="flex-grow sm:pl-8">
                 <h2 class="title-font font-medium text-2xl text-black">Himanshu Kumar</h2>
                 <h3 class="text-gray-900 mb-3 text-xl ">Backend Developer</h3>
                 <p class="mb-4 text-gray-900 text-l">Handles:</p>
-                <a href="https://www.linkedin.com/in/himanshu-kumar28"><img src="linkedin.svg" height="30" width="30"></a>
+                <a href="https://www.linkedin.com/in/himanshu-kumar28"><img src="{% static "linkedin.svg" %}" height="30" width="30"></a>
                   
                   
                 </span>
@@ -1359,24 +1389,24 @@ brown rice.
           </div>
           <div class="p-4 lg:w-1/2">
             <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="./team/Gopi.jpeg">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="{% static "/team/Gopi.jpeg" %}">
               <div class="flex-grow sm:pl-8">
                 <h2 class="title-font font-medium text-2xl text-gray-900">Gopi Vaibhav</h2>
                 <h3 class="text-gray-900 text-xl mb-3">Backend Developer</h3>
                 <p class="mb-4 text-gray-900 text-l">Handles:</p>
-                <a href="https://www.linkedin.com/in/gopi-vaibhav-987825200"><img src="linkedin.svg" height="30" width="30"></a>
+                <a href="https://www.linkedin.com/in/gopi-vaibhav-987825200"><img src="{% static "linkedin.svg" %}" height="30" width="30"></a>
               
               </div>
             </div>
           </div>
           <div class="p-4 lg:w-1/2">
             <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="./team/Priya.jpeg">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="{% static "/team/Priya.jpeg" %}">
               <div class="flex-grow sm:pl-8">
                 <h2 class="title-font font-medium text-2xl text-gray-900">Priya Sharma</h2>
                 <h3 class="text-gray-900 text-l mb-3">Frontend Developer</h3>
                 <p class="mb-4 text-gray-900 text-l">Handles:</p>
-                <a href="https://www.linkedin.com/in/priya-sharma-2503b6204"><img src="linkedin.svg" height="30" width="30"></a>
+                <a href="https://www.linkedin.com/in/priya-sharma-2503b6204"><img src="{% static "linkedin.svg" %}" height="30" width="30"></a>
                
                 
               </div>
@@ -1386,25 +1416,25 @@ brown rice.
 
           <div class="p-4 lg:w-1/2">
             <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="./team/Ashutosh.jpeg">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="{% static "/team/Ashutosh.jpeg" %}">
               <div class="flex-grow sm:pl-8">
                 <h2 class="title-font font-medium text-2xl text-gray-900">Ashutosh Rajput</h2>
                 <h3 class="text-gray-900 text-xl mb-3">Frontend Developer</h3>
                 <p class="mb-4 text-gray-900 text-l">Handles:</p>
-                <a href="https://www.linkedin.com/in/ashutosh-singh-rajput-159b311b5"><img src="linkedin.svg" height="30" width="30"></a>
+                <a href="https://www.linkedin.com/in/ashutosh-singh-rajput-159b311b5"><img src="{% static "linkedin.svg" %}" height="30" width="30"></a>
               
               </div>
             </div>
           </div>
           <div class="p-4 lg:w-1/2">
             <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="./team/Nishant.jpeg">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="{% static "/team/Nishant.jpeg" %}">
               <div class="flex-grow sm:pl-8">
                 <h2 class="title-font font-medium text-2xl text-gray-900">Nishant Harsh</h2>
                 <h3 class="text-gray-900 text-xl mb-3">Frontend Developer</h3>
                 <p class="mb-4 text-gray-900 text-l">Handles:</p>
                 <a href="https://www.linkedin.com/in/nishant-harsh-685976200">
-                  <img src="linkedin.svg" height="30" width="30">
+                  <img src="{% static "linkedin.svg" %}" height="30" width="30">
                 </a>
             
                   </div>
@@ -1418,12 +1448,12 @@ brown rice.
 
 
      <section class="text-gray-600 body-font relative">
-      <div class="container px-5 py-24 mx-auto">
+      <!-- <div class="container px-5 py-24 mx-auto"> -->
         <div class="flex flex-col text-center w-full mb-12">
           <h1 class="sm:text-5xl text-4xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-2xl">In case of any query please contact us.</p>
         </div>
-        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+        <!-- <div class="lg:w-1/2 md:w-2/3 mx-auto">
           <div class="flex flex-wrap -m-2">
             <div class="p-2 w-1/2">
               <div class="relative">
@@ -1445,8 +1475,17 @@ brown rice.
             </div>
             <div class="p-2 w-full">
               <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-xl">Submit</button>
+            </div> -->
+            <div class="contact_us">
+              <form action="" method="POST">{% csrf_token %}
+                {{form}}
+                <br>
+                  <!-- <input type="submit" value="Send!" > -->
+                  <button class="submitbutton" type="submit">
+                    <h2 class="heading">Submit</h2>
+                  </button>
+              </form>
             </div>
-            
     </section>
 
 
